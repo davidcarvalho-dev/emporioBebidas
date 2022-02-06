@@ -1,0 +1,15 @@
+.divForm{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+   
+}
+main{
+    margin: 0;
+}
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}

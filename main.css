@@ -1,0 +1,33 @@
+body{
+    background-color: whitesmoke;
+}
+.corMenu{
+    background-color: #F1D82D;
+ 
+}
+.barraPesquisa{
+    width: 12em
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #F1D82D;
+    width: 100%;
+
+}
+.divFooter{
+    background-color: blue;
+    margin: 0 auto;    
+}
+.iconeFooter{
+    width: 5rem;
+}
+.divSocial{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.divSocial, a{
+    text-decoration: none;
+    color: black;
+}

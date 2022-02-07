@@ -20,3 +20,4 @@ CREATE TABLE Produtos (
 
 INSERT INTO Usuario (nome, apelido, usuario, senha)
 VALUES ('Administrador', 'Admin',  'admin' '123');
+ALTER TABLE produtos ADD preco VARCHAR(10) DEFAULT "0,00";

@@ -1,0 +1,17 @@
+.divCards{
+    width: 50%;
+    justify-content: center;
+    margin: 0 auto;
+}
+.excluir{
+    color: red;
+}
+.excluir:hover {
+    color: red;
+}
+.editar{
+    color: blue;
+}
+.editar:hover{
+    color: DodgerBlue;
+}

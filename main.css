@@ -9,14 +9,12 @@ body{
     width: 12em
 }
 footer{
-    position: absolute;
     bottom: 0;
     background-color: #F1D82D;
     width: 100%;
 
 }
 .divFooter{
-    background-color: blue;
     margin: 0 auto;    
 }
 .iconeFooter{

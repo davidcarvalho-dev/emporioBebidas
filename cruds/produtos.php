@@ -26,7 +26,7 @@ if(isset($_SESSION['apelido'])){
         echo "<ul>";
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<li>".$row["nome"]."<a href='produto_editar.php?id=".$row["id"]."'>|EDITAR </a> | <a href='bd_remover_produto.php?id=".$row["id"]."'>REMOVER|</a></li>";
+                echo "<li>".$row["nome"]."|". $row["preco"]."<a href='produto_editar.php?id=".$row["id"]."'>|EDITAR </a> | <a href='bd_remover_produto.php?id=".$row["id"]."'>REMOVER|</a></li>";
             }
         }else{
             echo "Nenhuma produto cadastrado";

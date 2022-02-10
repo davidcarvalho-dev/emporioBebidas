@@ -17,6 +17,7 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $nome = $row["nome"];
         $categoria_id = $row["id_categorias"];
+        $preco= $row["preco"];
     }
 } else {
     desconectar($conn);
@@ -76,6 +77,10 @@ if (mysqli_num_rows($result) > 0) {
                         <p>
                             <strong><label for="nome" class="form-label">Nome</label></strong>
                             <input type="text" name="nome" id="nome" value="<?php echo $nome; ?>">
+                        </p>
+                        <p>
+                            <strong><label for="preco" class="form-label">Preço</label></strong>
+                            <input type="text" name="preco" id="preco" value="<?php echo $preco; ?>">
                         </p>
                         <p>
                             <input type="hidden" name="id" value="<?php echo $id; ?>">

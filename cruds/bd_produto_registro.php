@@ -5,11 +5,12 @@ if(!isset($_SESSION['apelido'])){
 }
     $nome = $_POST["nome"];
     $id_categorias = $_POST["categorias"]; 
+    $preco = $_POST["preco"];
 
     include "../php/conexao.php";
     $conn = conectar();
 
-    $sql = "INSERT INTO Produtos (nome, id_categorias) VALUES ('$nome', $id_categorias)";
+    $sql = "INSERT INTO Produtos (nome, id_categorias, preco) VALUES ('$nome', $id_categorias, '$preco')";
     $result = mysqli_query($conn, $sql);
 
 

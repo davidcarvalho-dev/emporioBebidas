@@ -56,6 +56,10 @@ if (!isset($_SESSION['apelido'])) {
                            <strong><label for="nome" class="form-label">Nome</label></strong>
                             <input type="text" name="nome" class="form-control" id="nome">
                         </p>
+                        <p>
+                           <strong><label for="preco" class="form-label">Preço</label></strong>
+                            <input type="text" name="preco" class="form-control" id="preco">
+                        </p>
                         <?php
                         include "../php/conexao.php";
 

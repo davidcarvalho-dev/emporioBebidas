@@ -1,4 +1,4 @@
-[21:31, 08/02/2022] David: <?php
+<?php
         include "php/conexao.php";
 
         $conn = conectar();
@@ -18,7 +18,7 @@
 
         desconectar($conn);
     ?>
-[22:17, 08/02/2022] David: <?php
+<?php
 session_start();
 if (!isset($_SESSION['apelido'])) {
     header('Location: ../php/login.php');

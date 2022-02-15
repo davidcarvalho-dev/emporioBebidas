@@ -17,7 +17,8 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $nome = $row["nome"];
         $categoria_id = $row["id_categorias"];
-        $preco= $row["preco"];
+        $preco = $row["preco"];
+        $imagem = $row["imagem"];
     }
 } else {
     desconectar($conn);
@@ -35,6 +36,7 @@ if (mysqli_num_rows($result) > 0) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="../css/ad_categorias.css">
+    <link rel="stylesheet" href="../css/editar.css">
 </head>
 
 <body>
@@ -76,23 +78,31 @@ if (mysqli_num_rows($result) > 0) {
                         <h3 class="text-center mb-5">Editar produto</h3>
                         <p>
                             <strong><label for="nome" class="form-label">Nome</label></strong>
-                            <input type="text" name="nome" id="nome" value="<?php echo $nome; ?>">
+                            <input type="text" name="nome" id="nome" class="form-control" value="<?php echo $nome; ?>">
                         </p>
                         <p>
                             <strong><label for="preco" class="form-label">Preço</label></strong>
-                            <input type="text" name="preco" id="preco" value="<?php echo $preco; ?>">
+                            <input type="text" name="preco" id="preco" class="form-control" value="<?php echo $preco; ?>">
                         </p>
                         <p>
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
                         </p>
-                        <p><strong> Selecione a categoria</strong></p>
+
+                        </div>
+                        <div class="col-12">
+                            <p class="text-center">
+                                <img src="../images/<?php echo $imagem; ?>" alt="" class="img-thumbnail">
+
+                            </p>
+
+                            <p><strong> Selecione a categoria</strong></p>
                         <?php
                         $sql = "SELECT * FROM Categorias ORDER BY nome";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<input  type='radio' name='categoria' value='" . $row["id"] . "'";
+                                echo "<input  type='radio' class='form-check-input' name='categoria' value='" . $row["id"] . "'";
                                 if ($row["id"] == $categoria_id) {
                                     echo "checked";
                                 }
@@ -103,8 +113,14 @@ if (mysqli_num_rows($result) > 0) {
                         }
                         ?>
                         <p class="text-center mt-3">
-                            <button type="submit" class="btn btn-success">Atulizar</button>
+                            <button type="submit" class="btn btn-success">Atualizar</button>
                         </p>
+
+                        </div>
+
+
+                </div>
+                    
             </form>
         </div>
     </main>

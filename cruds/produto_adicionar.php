@@ -47,18 +47,25 @@ if (!isset($_SESSION['apelido'])) {
     <main>
 
         <div class="container divForm mt-5">
-            <form action="bd_produto_registro.php" method="POST">
+            <form action="bd_produto_registro.php" method="POST" enctype="multipart/form-data">
                 <div class="row">
 
                     <div class="col-12">
                         <h3 class="text-center mb-5">Adicione um produto</h3>
                         <p>
                            <strong><label for="nome" class="form-label">Nome</label></strong>
-                            <input type="text" name="nome" class="form-control" id="nome">
+                            <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o nome do produto" required >
                         </p>
                         <p>
                            <strong><label for="preco" class="form-label">Preço</label></strong>
                             <input type="text" name="preco" class="form-control" id="preco">
+                        </p>
+                        <p>
+                           <strong><label for="imagem" class="form-label">Imagem</label></strong>
+                            <input type="file" name="imagem_produto" class="form-control" id="imagem">
+                        </p>
+                        <p>
+                        <strong>Categoria:</strong>
                         </p>
                         <?php
                         include "../php/conexao.php";
@@ -71,7 +78,7 @@ if (!isset($_SESSION['apelido'])) {
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<br/><p><strong><label>Categoria:</strong> <br /><br /><input type='radio' name='categorias' value='" . $row['id'] . "'> " . $row['nome'] . "</label></p>";
+                                echo "<p><input type='radio' class='form-check-input' name='categorias' value='" . $row['id'] . "'required> " . $row['nome'] . "</p>";
                             }
                         } else {
                             echo "Nenhuma categoria cadastradada";
@@ -94,17 +101,7 @@ if (!isset($_SESSION['apelido'])) {
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+   
     <footer>
         <div class="divFooter">
             <div class="divSocial mt-1">

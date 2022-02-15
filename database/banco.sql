@@ -20,4 +20,6 @@ CREATE TABLE Produtos (
 
 INSERT INTO Usuario (nome, apelido, usuario, senha)
 VALUES ('Administrador', 'Admin',  'admin' '123');
+
 ALTER TABLE produtos ADD preco VARCHAR(10) DEFAULT "0,00";
+ALTER TABLE produtos ADD imagem VARCHAR(100) DEFAULT "sem_imagem.png";

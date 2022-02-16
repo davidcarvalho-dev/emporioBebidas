@@ -17,9 +17,6 @@ if(isset($_FILES['imagem_produto']) && !empty($_FILES["imagem_produto"]["name"])
 }else{
     $nome_imagem = "sem_imagem.png";
 }
-
-
-
     include "../php/conexao.php";
     $conn = conectar();
 

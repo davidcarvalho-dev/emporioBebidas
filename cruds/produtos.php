@@ -28,7 +28,7 @@ if (isset($_SESSION['apelido'])) {
                         <div class="menu">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="link" href="produtos.php">
+                                    <a class="link" href="../php/perfil.php">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z" />
                                             <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
@@ -69,7 +69,7 @@ if (isset($_SESSION['apelido'])) {
                     <img src='../images/" . $row["imagem"] . "' class='card-img-top' alt='...'>
                     <div class='card-body'>
                       <h5 class='card-title'> " . $row["nome"] . " </h5>
-                      <p class='card-text'>" . $row["preco"] . "</p>
+                      <p class='card-text'>" ."R$ " . $row["preco"] . "</p>
                       <div class='row'>
                         <div class='col-6'>
                             <a href='produto_editar.php?id=" . $row["id"] . "' class='btn btn-primary'>Editar</a>

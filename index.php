@@ -11,6 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/produtos.css">
     <title>Empório das Bsebidas de Paracuru</title>
 </head>
 
@@ -104,15 +105,28 @@
         $sql = "SELECT * FROM Produtos ORDER BY nome";
         $result = mysqli_query($conn, $sql);
 
-        echo "<ul>";
+        echo "<div class='row linha'> <div class='faixa'><ul>";
+
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<li>".$row["nome"]."<a href='produto_editar.php?id=".$row["id"]."'>|EDITAR </a> | <a href='bd_remover_produto.php?id=".$row["id"]."'>REMOVER|</a></li>";
+                echo "<li> <div class='col-6'>
+                    <div class='card' style='width: 15rem;'>
+                    <img src='images/" . $row["imagem"] . "' class='card-img-top' alt='...'>
+                    <div class='card-body'>
+                      <h5 class='card-title'> " . $row["nome"] . " </h5>
+                      <p class='card-text'>" ."R$ ". $row["preco"] . "</p>
+                      <p class='text-center'>
+                      <a class='btn btn-warning'>Comprar</a>
+                    </p>
+                  </div>
+                  </div>
+                  </li>";
             }
         }else{
             echo "Nenhuma produto cadastrado";
         }
-        echo "</ul>";
+        echo "</ul> </div></div>";
+        
 
         desconectar($conn);
     ?>

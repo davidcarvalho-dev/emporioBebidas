@@ -71,7 +71,7 @@ if (mysqli_num_rows($result) > 0) {
     <main>
 
         <div class="container divForm mt-5">
-            <form action="bd_atualizar_produto.php" method="POST">
+            <form action="bd_atualizar_produto.php" method="POST" enctype="multipart/form-data">
                 <div class="row">
 
                     <div class="col-12">
@@ -82,20 +82,26 @@ if (mysqli_num_rows($result) > 0) {
                         </p>
                         <p>
                             <strong><label for="preco" class="form-label">Preço</label></strong>
-                            <input type="text" name="preco" id="preco" class="form-control" value="<?php echo $preco; ?>">
+                            <input type="number" step="0.01" name="preco" id="preco" class="form-control" value="<?php echo $preco; ?>">
                         </p>
                         <p>
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
                         </p>
 
-                        </div>
-                        <div class="col-12">
-                            <p class="text-center">
-                                <img src="../images/<?php echo $imagem; ?>" alt="" class="img-thumbnail">
+                    </div>
+                    <div class="col-">
+                        <p class="mt-3"><strong>Imagem atual:</strong></p>
+                        <p class="text-center">
+                            <img src="../images/<?php echo $imagem; ?>" alt="" width="300px">
 
-                            </p>
+                        </p>
+                        <p>
+                            <strong><label for="imagem" class="form-label mt-2">Selecione uma nova imagem:</label></strong>
+                            <input type="file" name="imagem_produto" class="form-control" id="imagem">
+                        </p>
 
-                            <p><strong> Selecione a categoria</strong></p>
+
+                        <p class="mt-5"><strong> Selecione a categoria</strong></p>
                         <?php
                         $sql = "SELECT * FROM Categorias ORDER BY nome";
                         $result = mysqli_query($conn, $sql);
@@ -116,11 +122,11 @@ if (mysqli_num_rows($result) > 0) {
                             <button type="submit" class="btn btn-success">Atualizar</button>
                         </p>
 
-                        </div>
+                    </div>
 
 
                 </div>
-                    
+
             </form>
         </div>
     </main>

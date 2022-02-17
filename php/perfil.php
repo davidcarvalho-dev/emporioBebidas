@@ -21,7 +21,7 @@ if (!isset($_SESSION['apelido'])) {
     <header>
         <nav class="navbar navbar-expand-lg navbar-light corMenu">
             <div class="container-fluid menu">
-                <a class="navbar-brand" href="index.php"><img src="../icons/logo.png" class="img-fluid" alt="logo do Empório das Bebidas de paracuru"></a>
+                <a class="navbar-brand" href="../index.php"><img src="../icons/logo.png" class="img-fluid" alt="logo do Empório das Bebidas de paracuru"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

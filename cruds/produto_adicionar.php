@@ -58,7 +58,7 @@ if (!isset($_SESSION['apelido'])) {
                         </p>
                         <p>
                            <strong><label for="preco" class="form-label">Preço</label></strong>
-                            <input type="text" name="preco" class="form-control" id="preco">
+                            <input type="number" step="0.01" name="preco" class="form-control" id="preco">
                         </p>
                         <p>
                            <strong><label for="imagem" class="form-label">Imagem</label></strong>
